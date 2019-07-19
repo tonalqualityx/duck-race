@@ -1,0 +1,386 @@
+<style>
+#duck-run {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(51, 176, 204);
+}
+
+#duck-sun {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 60%;
+}
+
+#duck-cloud {
+    position: absolute;
+    left: 10%;
+    width: 15%;
+}
+
+#light-wave {
+    position: absolute;
+    top: 77%;
+    transform: translateX(3px);
+    width: 130%;
+    left: 0;
+    animation: wave2 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+}
+
+#dark-wave {
+    position: absolute;
+    top: 80%;
+    /* transform: translateY(75%); */
+    left: 0;
+    width: 200%;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+}
+
+.duck {
+    position: absolute;
+    top: 73%;
+    right: 31%;
+    transform: rotateY(180deg) scale(1.75);
+    animation: drift 25s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+}
+
+.duck:nth-of-type(2){
+    display: none;
+    right: 12%;
+}
+
+.duck:nth-of-type(3){
+    right: 62%;
+}
+
+.duck:nth-of-type(4){
+    right: 75%;
+    display: none;
+}
+
+#duck-run .ind-cta {
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#duck-run h3 {
+    font-size: 2em;
+    color: #ffcd65;
+    margin-bottom: 5px;
+    /* font-family: sans-serif; */
+}
+
+#duck-run p {
+    color: white;
+    /* margin: 0; */
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#duck-run .flex {
+    display: flex;
+    flex-direction: column;
+}
+
+#duck-run a {
+    display: inline-block;
+    background: rgb(255, 130, 16);
+    color: white;
+    padding: 7px 20px;
+    border: 1px solid rgb(255, 200, 91);
+    font-size: 1.5em;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#duck-run a:first-child {
+    background: rgb(2, 119, 140);
+    border-color: rgb(2, 141, 167);
+}
+
+.duck:first-of-type .bob {
+    animation: bob 3.5s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite;
+}
+
+.duck:nth-of-type(2) .bob {
+    animation: bob 3.5s cubic-bezier( 0.36, 0.45, 0.63, 0.53) 0.7s infinite;
+
+}
+
+.duck:nth-of-type(3) .bob {
+    animation: bob 3.5s cubic-bezier( 0.36, 0.45, 0.63, 0.53) 0.4s infinite;
+}
+
+.duck:nth-of-type(4) .bob {
+    animation: bob 3.5s cubic-bezier( 0.36, 0.45, 0.63, 0.53) 0s infinite;
+}
+
+
+
+@keyframes wave {
+    0% {
+        margin-left: 0;
+
+    }
+
+    10% {
+        margin-left: -2%;
+
+    }
+
+    12% {
+        margin-left: -3%;
+
+    }
+
+    20% {
+        margin-left: -5%;
+
+    }
+
+    30% {
+        margin-left: -5.5%;
+
+    }
+
+    40% {
+        margin-left: -7%;
+    }
+
+    50% {
+        margin-left: -8%;
+    }
+
+    60% {
+        margin-left: -7.5%;
+    }
+
+    70% {
+        margin-left: -6%;
+    }
+
+    80% {
+        margin-left: -5%;
+    }
+
+    90% {
+        margin-left: -2%;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+
+}
+
+@keyframes wave2 {
+    0% {
+        margin-left: -10%;
+
+    }
+
+    10% {
+        margin-left: -9%;
+
+    }
+
+    14% {
+        margin-left: -7%;
+
+    }
+
+    20% {
+        margin-left: -5%;
+
+    }
+
+    30% {
+        margin-left: -4%;
+
+    }
+
+    40% {
+        margin-left: -3.5%;
+    }
+
+    50% {
+        margin-left: -3%;
+    }
+
+    60% {
+        margin-left: -4.5%;
+    }
+
+    70% {
+        margin-left: -6%;
+    }
+
+    80% {
+        margin-left: -8%;
+    }
+
+    90% {
+        margin-left: -8.5%;
+    }
+
+    100% {
+        margin-left: -10%;
+    }
+
+}
+
+@keyframes drift {
+    0% {
+        transform: translateX(0) rotateY(180deg) scale(1);        
+    }
+
+    50% {
+        transform: translateX(-20%) rotateY(180deg) scale(1);
+    }
+
+    100% {
+        transform: translateX(0) rotateY(180deg) scale(1);        
+    }
+
+}
+
+@keyframes bob {
+    0% {
+        transform : translateY(0) rotate(0);
+    }
+
+    30% {
+        transform: translateY(7px) rotate(12deg);
+    }
+
+    60% {
+        transform: translateY(8px) rotate(-8deg);
+    }
+}
+
+@media screen and (min-width: 768px){
+
+    #duck-run h3 {
+        font-size: 3em;
+    }
+
+    #duck-sun {
+        width: 30%;
+    }
+
+    .duck {
+        top: 78%;
+    }
+
+    .duck:nth-of-type(2){
+        display: block;
+    }
+
+    .duck:nth-of-type(4){
+        display: block;
+    }
+
+    #duck-run .ind-cta {
+        position: absolute;
+        top: 50%;
+    }
+
+    #duck-run .flex {
+        flex-direction: row;
+    }
+
+    @keyframes drift {
+        0% {
+            transform: translateX(0) rotateY(180deg) scale(1.75);        
+        }
+
+        50% {
+            transform: translateX(-200%) rotateY(180deg) scale(1.75);
+        }
+
+        100% {
+            transform: translateX(0) rotateY(180deg) scale(1.75);        
+        }
+
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .duck {
+        position: absolute;
+        top: 80%;
+    }
+}
+
+@media screen and (min-width: 1600px){
+    .duck {
+        position: absolute;
+        top: 83%;
+    }
+}
+
+</style>
+
+<div id="duck-run">
+
+    <svg id="duck-sun" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 489.433 489.435" style="fill: rgb(0, 0, 0);" xml:space="preserve">
+    <g id="__id22_snb3d0f44i">
+        <circle style="fill: rgb(255, 224, 0);" cx="244.714" cy="244.713" r="166.606"></circle>
+        <polygon style="fill: rgb(255, 224, 0);" points="211.822,56.982 244.714,0 277.603,56.982  "></polygon>
+        <polygon style="fill: rgb(255, 224, 0);" points="122.365,98.581 122.354,32.788 179.331,65.689  "></polygon>
+        <polygon style="fill: rgb(255, 224, 0);" points="65.689,179.333 32.785,122.362 98.578,122.367  "></polygon>
+        <polygon style="fill: rgb(255, 224, 0);" points="56.982,277.605 0,244.721 56.982,211.828  "></polygon>
+        <polygon style="fill: rgb(255, 224, 0);" points="98.578,367.065 32.785,367.081 65.689,310.099  "></polygon>
+        <polygon style="fill: rgb(255, 224, 0);" points="179.331,423.741 122.359,456.65 122.365,390.852  "></polygon>
+        <polygon style="fill: rgb(255, 224, 0);" points="277.603,432.448 244.719,489.435 211.825,432.448  "></polygon>
+        <polygon style="fill: rgb(255, 224, 0);" points="367.062,390.852 367.078,456.645 310.096,423.741  "></polygon>
+        <polygon style="fill: rgb(255, 224, 0);" points="423.738,310.099 456.653,367.071 390.85,367.065  "></polygon>
+        <polygon style="fill: rgb(255, 224, 0);" points="432.445,211.828 489.433,244.711 432.445,277.605  "></polygon>
+        <polygon style="fill: rgb(255, 224, 0);" points="390.85,122.367 456.643,122.352 423.738,179.333  "></polygon>
+        <polygon style="fill: rgb(255, 224, 0);" points="310.096,65.692 367.068,32.782 367.062,98.581  "></polygon>
+    </g>
+    </svg>
+
+    <svg id="duck-cloud" class="_1LGPcGiAwvNAySV0GUsZCr" width="417.3025117024329" height="278.9959668636397" viewBox="0 0 350 233.3"><path class="" d="M350 152.2c0-43.5-34.2-78.9-77.2-81C258.9 29.9 219.9 0 173.9 0 119.7 0 75.2 41.4 70.1 94.3h-.5C31.1 94.2 0 125.4 0 163.8s31.1 69.6 69.6 69.6h202.2v-.1c43.4-1.7 78.2-37.3 78.2-81.1z" fill="#ffffff"></path><use xlink:href="#__id4_0"></use></svg>
+
+    <svg id="light-wave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 946.465 230.413" enable-background="new 0 0 946.465 230.413" xml:space="preserve" style="fill: rgb(0, 0, 0);">
+    <g id="__id20_suscb8uun4"><path d="M946.704,21.696c-5.678,0-10.661-2.945-13.527-7.387c-2.867,4.441-7.851,7.387-13.528,7.387  c-5.677,0-10.66-2.945-13.527-7.387c-2.867,4.441-7.85,7.387-13.528,7.387c-5.678,0-10.66-2.945-13.527-7.387  c-2.867,4.441-7.85,7.387-13.527,7.387c-5.679,0-10.661-2.945-13.527-7.387c-2.868,4.441-7.851,7.387-13.528,7.387  c-5.679,0-10.66-2.945-13.528-7.387c-2.867,4.441-7.849,7.387-13.527,7.387c-5.678,0-10.66-2.945-13.527-7.387  c-2.868,4.441-7.85,7.387-13.528,7.387c-5.678,0-10.66-2.945-13.527-7.387c-2.867,4.441-7.85,7.387-13.528,7.387  c-5.678,0-10.66-2.945-13.527-7.387c-2.867,4.441-7.85,7.387-13.527,7.387c-5.679,0-10.662-2.945-13.528-7.387  c-2.867,4.441-7.851,7.387-13.528,7.387s-10.66-2.945-13.527-7.387c-2.867,4.441-7.851,7.387-13.528,7.387  c-5.677,0-10.66-2.945-13.527-7.387c-2.866,4.441-7.85,7.387-13.528,7.387c-5.678,0-10.659-2.945-13.526-7.387  c-2.869,4.441-7.851,7.387-13.528,7.387c-5.679,0-10.66-2.945-13.527-7.387c-2.869,4.441-7.851,7.387-13.528,7.387  c-5.679,0-10.66-2.945-13.527-7.387c-2.868,4.441-7.85,7.387-13.528,7.387c-5.678,0-10.659-2.945-13.527-7.387  c-2.868,4.441-7.85,7.387-13.528,7.387c-5.678,0-10.659-2.945-13.527-7.387c-2.868,4.441-7.85,7.387-13.527,7.387  c-5.679,0-10.66-2.945-13.528-7.387c-2.868,4.441-7.85,7.387-13.527,7.387c-5.679,0-10.66-2.945-13.528-7.387  c-2.868,4.441-7.85,7.387-13.527,7.387s-10.659-2.945-13.528-7.387c-2.867,4.441-7.85,7.387-13.527,7.387s-10.66-2.945-13.528-7.387  c-2.867,4.441-7.85,7.387-13.527,7.387s-10.66-2.945-13.527-7.387c-2.868,4.441-7.851,7.387-13.528,7.387s-10.66-2.945-13.527-7.387  c-2.869,4.441-7.851,7.387-13.528,7.387s-10.66-2.945-13.527-7.387c-2.868,4.441-7.85,7.387-13.528,7.387  c-5.678,0-10.659-2.945-13.527-7.387c-2.868,4.441-7.85,7.387-13.528,7.387c-5.678,0-10.659-2.945-13.526-7.387  c-2.869,4.441-7.851,7.387-13.528,7.387c-5.679,0-10.66-2.945-13.528-7.387c-2.868,4.441-7.85,7.387-13.527,7.387  s-10.66-2.945-13.528-7.387c-2.867,4.441-7.849,7.387-13.527,7.387c-5.678,0-10.659-2.945-13.528-7.387  c-2.867,4.441-7.849,7.387-13.527,7.387c-5.678,0-10.66-2.945-13.528-7.387c-2.867,4.441-7.849,7.387-13.526,7.387  c-5.679,0-10.661-2.945-13.528-7.387c-2.868,4.441-7.851,7.387-13.528,7.387s-10.66-2.945-13.527-7.387  c-2.867,4.441-7.851,7.387-13.528,7.387c-5.677,0-10.659-2.945-13.527-7.387c-2.868,4.441-7.85,7.387-13.528,7.387  c-5.678,0-10.659-2.945-13.527-7.387c-2.868,4.441-7.85,7.387-13.527,7.387c-5.679,0-10.66-2.945-13.527-7.387  c-2.869,4.441-7.851,7.387-13.528,7.387c-5.679,0-10.66-2.945-13.527-7.387c-2.869,4.441-7.851,7.387-13.528,7.387v208.717h946.943  V21.696z" style="fill: rgb(2, 142, 167);"></path></g>
+    </svg>
+    <div class="duck">
+        <img src="https://sapcc-vt.org/wp-content/uploads/2019/06/duck.svg" class="bob">
+    </div>
+    <div class="duck">
+        <img src="https://sapcc-vt.org/wp-content/uploads/2019/06/duck.svg" class="bob">
+    </div>
+    <div class="duck">
+        <img src="https://sapcc-vt.org/wp-content/uploads/2019/06/duck.svg" class="bob">
+    </div>
+    <div class="duck">
+        <img src="https://sapcc-vt.org/wp-content/uploads/2019/06/duck.svg" class="bob">
+    </div>
+    
+    <!-- <img src="https://sapcc-vt.org/wp-content/uploads/2019/06/duck.svg" class="duck">
+    <img src="https://sapcc-vt.org/wp-content/uploads/2019/06/duck.svg" class="duck">
+    <img src="https://sapcc-vt.org/wp-content/uploads/2019/06/duck.svg" class="duck"> -->
+
+    <svg id="dark-wave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 946.465 230.413" enable-background="new 0 0 946.465 230.413" xml:space="preserve" style="fill: rgb(0, 0, 0);">
+    <g id="__id21_sdjlxi44f5"><path d="M946.704,21.696c-5.678,0-10.661-2.945-13.527-7.387c-2.867,4.441-7.851,7.387-13.528,7.387  c-5.677,0-10.66-2.945-13.527-7.387c-2.867,4.441-7.85,7.387-13.528,7.387c-5.678,0-10.66-2.945-13.527-7.387  c-2.867,4.441-7.85,7.387-13.527,7.387c-5.679,0-10.661-2.945-13.527-7.387c-2.868,4.441-7.851,7.387-13.528,7.387  c-5.679,0-10.66-2.945-13.528-7.387c-2.867,4.441-7.849,7.387-13.527,7.387c-5.678,0-10.66-2.945-13.527-7.387  c-2.868,4.441-7.85,7.387-13.528,7.387c-5.678,0-10.66-2.945-13.527-7.387c-2.867,4.441-7.85,7.387-13.528,7.387  c-5.678,0-10.66-2.945-13.527-7.387c-2.867,4.441-7.85,7.387-13.527,7.387c-5.679,0-10.662-2.945-13.528-7.387  c-2.867,4.441-7.851,7.387-13.528,7.387s-10.66-2.945-13.527-7.387c-2.867,4.441-7.851,7.387-13.528,7.387  c-5.677,0-10.66-2.945-13.527-7.387c-2.866,4.441-7.85,7.387-13.528,7.387c-5.678,0-10.659-2.945-13.526-7.387  c-2.869,4.441-7.851,7.387-13.528,7.387c-5.679,0-10.66-2.945-13.527-7.387c-2.869,4.441-7.851,7.387-13.528,7.387  c-5.679,0-10.66-2.945-13.527-7.387c-2.868,4.441-7.85,7.387-13.528,7.387c-5.678,0-10.659-2.945-13.527-7.387  c-2.868,4.441-7.85,7.387-13.528,7.387c-5.678,0-10.659-2.945-13.527-7.387c-2.868,4.441-7.85,7.387-13.527,7.387  c-5.679,0-10.66-2.945-13.528-7.387c-2.868,4.441-7.85,7.387-13.527,7.387c-5.679,0-10.66-2.945-13.528-7.387  c-2.868,4.441-7.85,7.387-13.527,7.387s-10.659-2.945-13.528-7.387c-2.867,4.441-7.85,7.387-13.527,7.387s-10.66-2.945-13.528-7.387  c-2.867,4.441-7.85,7.387-13.527,7.387s-10.66-2.945-13.527-7.387c-2.868,4.441-7.851,7.387-13.528,7.387s-10.66-2.945-13.527-7.387  c-2.869,4.441-7.851,7.387-13.528,7.387s-10.66-2.945-13.527-7.387c-2.868,4.441-7.85,7.387-13.528,7.387  c-5.678,0-10.659-2.945-13.527-7.387c-2.868,4.441-7.85,7.387-13.528,7.387c-5.678,0-10.659-2.945-13.526-7.387  c-2.869,4.441-7.851,7.387-13.528,7.387c-5.679,0-10.66-2.945-13.528-7.387c-2.868,4.441-7.85,7.387-13.527,7.387  s-10.66-2.945-13.528-7.387c-2.867,4.441-7.849,7.387-13.527,7.387c-5.678,0-10.659-2.945-13.528-7.387  c-2.867,4.441-7.849,7.387-13.527,7.387c-5.678,0-10.66-2.945-13.528-7.387c-2.867,4.441-7.849,7.387-13.526,7.387  c-5.679,0-10.661-2.945-13.528-7.387c-2.868,4.441-7.851,7.387-13.528,7.387s-10.66-2.945-13.527-7.387  c-2.867,4.441-7.851,7.387-13.528,7.387c-5.677,0-10.659-2.945-13.527-7.387c-2.868,4.441-7.85,7.387-13.528,7.387  c-5.678,0-10.659-2.945-13.527-7.387c-2.868,4.441-7.85,7.387-13.527,7.387c-5.679,0-10.66-2.945-13.527-7.387  c-2.869,4.441-7.851,7.387-13.528,7.387c-5.679,0-10.66-2.945-13.527-7.387c-2.869,4.441-7.851,7.387-13.528,7.387v208.717h946.943  V21.696z" style="fill: rgb(2, 119, 140);"></path></g>
+    </svg>
+
+    <div class="ind-cta">
+        <h3>Fit 'N Fun Duck Run</h3>
+        <p>July 20, 2019</p>
+        <div style="flex">
+            <a href="https://www.facebook.com/events/461676097911727/" target="_blank">Learn More</a>
+            <a href="https://sapccvt.z2systems.com/np/clients/sapccvt/donation.jsp?campaign=3" target="_blank">Register Ducks</a>
+        </div>
+    </div>
+
+</div>
